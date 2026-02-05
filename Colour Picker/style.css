@@ -18,3 +18,9 @@ button{
     height: 50px;
     width: 150px;
 }
+p
+{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}

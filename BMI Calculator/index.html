@@ -13,7 +13,14 @@
         <input type="text" placeholder="Height(cm)" id="height" required/>
         <input type="text" placeholder="Weight(kg)" id="weight" required/>
         <input type="submit" value="Calculate" id="submit"/>
+        <div class="result"></div>
     </form>
+    <div class="container">
+        <div class="card" data-bmi="30"><span> BMI > 30:</span> <br> Obese</div>
+        <div class="card" data-bmi="25"><span> BMI 25 - 30:</span> <br> Overweight</div>
+        <div class="card" data-bmi="18.5"><span> BMI 18.5 - 25:</span> <br> Normal</div>
+        <div class="card" data-bmi="0"><span> BMI < 18.5:</span> <br> Underweight</div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

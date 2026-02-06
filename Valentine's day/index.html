@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovely Valentine's Day!</title>
+    <link rel = "stylesheet" href="style.css"/>
+</head>
+<body>
+    <img src="https://www.svgrepo.com/show/251387/valentines-wings.svg" alt="" srcset="" id="bg-heart1">
+    <img src="https://www.svgrepo.com/show/251387/valentines-wings.svg" alt="" srcset="" id="bg-heart2">
+    <div class="bd">
+        <h1>Happy Valentine's Day!</h1>
+        <p>Wishing you a day filled with love and happiness. May your heart be filled with joy and your life be surrounded by the warmth of love. Happy Valentine's Day to you my love</p>
+        <div class="envelope">
+            <div class="cardinside"><img src="https://i.pinimg.com/736x/16/c0/d3/16c0d321f2212c1d33e69b0cc419cebf.jpg" alt="" srcset="" ></div>
+            <div class="cardoutside"><img src="https://iili.io/fbkMoPt.md.png" alt="" srcset=""></div>
+        </div>  
+        <div class="container">
+            <div class="card"><h3>Heading</h3><img src="https://www.svgrepo.com/show/501921/love.svg" alt="" srcset=""></div>
+            <div class="card"><h3>Heading</h3><img src="https://www.svgrepo.com/show/501920/roses.svg" alt="" srcset=""></div>
+            <div class="card"><h3>Heading</h3><img src="https://www.svgrepo.com/show/501906/ring.svg" alt="" srcset=""></div>
+        </div>
+    </div>
+    <div id="valentine-overlay">
+    <div class="valentine-box">
+        <h1>Will you be my Valentine? 💖</h1>
+        <div class="btn-group">
+            <button id="yesBtn">Yes 💕</button>
+            <button id="noBtn">No 😢</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+let yesScale = 1;
+let noScale = 1;
+
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const overlay = document.getElementById("valentine-overlay");
+
+noBtn.addEventListener("click", () => {
+    yesScale += 0.25;
+    noScale -= 0.15;
+
+    yesBtn.style.transform = `scale(${yesScale})`;
+    noBtn.style.transform = `scale(${noScale})`;
+
+    if (noScale <= 0.1) {
+        noBtn.style.opacity = "0";
+        noBtn.style.pointerEvents = "none";
+    }
+});
+
+yesBtn.addEventListener("click", () => {
+    overlay.style.opacity = "0";
+    overlay.style.pointerEvents = "none";
+
+    setTimeout(() => {
+        overlay.style.display = "none";
+    }, 400);
+});
+yesBtn.addEventListener("click", () => {
+    // Disable hover everywhere
+    document.body.classList.add("disable-hover");
+
+    overlay.style.opacity = "0";
+    overlay.style.pointerEvents = "none";
+
+    setTimeout(() => {
+        overlay.style.display = "none";
+
+        // Re-enable hover AFTER layout settles
+        document.body.classList.remove("disable-hover");
+    }, 500);
+});
+</script>
+
+</body>
+</html>

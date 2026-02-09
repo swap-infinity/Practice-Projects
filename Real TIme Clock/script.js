@@ -25,7 +25,7 @@ function updateStopwatchDisplay()
 }
 
 start.addEventListener("click",function(){
-    if(stopwatchtimer === null)
+    if(stopwatchtimer !== null)
         return;
     stopwatchtimer = setInterval(function(){
         seconds++;
